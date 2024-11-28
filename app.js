@@ -25,5 +25,11 @@ app.use('/mentor',mentorRoute);
 app.use('/mentee',menteeRoute);
 
 
+app.use("*",(req,res)=>{
+   res.status(404).json({
+      msg:"Bad request !!!"
+   })
+});
+
 
 module.exports = app;
