@@ -4,6 +4,18 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
 
+const cors = require('cors');
+app.use(cors());
+
+const corsConfig = {
+  origin:"*",
+  Credential: true,
+  methods:["GET","POST","PUT","DELETE"]
+}
+
+app.options("",cors(corsConfig));
+
+
 // connecting to database
 // '#' char in url =>  %23
 mongoose.connect('mongodb+srv://dineshgupta:dinesh%237068@cluster0.gf0ft.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
