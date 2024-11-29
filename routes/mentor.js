@@ -139,13 +139,13 @@ router.post('/addNewMentee',checkAuth, async(req,res)=>{
 );
 
 // Get own mentees
-router.get('/getAllMentees',checkAuth,(req,res)=>{
+router.get('/getAllMentees',(req,res)=>{
 
-    const token = req.headers.authorization.split(" ")[1];
-    const verify = jwt.verify(token,'nkjdkfj');
+    // const token = req.headers.authorization.split(" ")[1];
+    // const verify = jwt.verify(token,'nkjdkfj');
 
-    mentee.find({mentorId : verify.mentorId})
-    .select("_id mentorId mentorName name email")
+    //mentee.find({mentorId : verify.mentorId})
+    mentee.find().select("_id mentorId mentorName name email")
     .then(result=>{
         res.status(200).json({
             menteeList: result

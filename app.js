@@ -2,18 +2,14 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
-
-
 const cors = require('cors');
-app.use(cors());
 
 const corsConfig = {
   origin:"*",
-  Credential: true,
+  credentials: true,
   methods:["GET","POST","PUT","DELETE"]
 }
-
-app.options("",cors(corsConfig));
+app.use(cors(corsConfig));
 
 
 // connecting to database
