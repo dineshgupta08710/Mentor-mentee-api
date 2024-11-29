@@ -7,7 +7,10 @@
       { 
         "src": "/(.*)", 
         "dest": "/app.js",
-        "methods":["GET","POST","PUT","PATCH","DELETE"]
+        "methods":["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
+        "headers":{
+          "Access-Control-Allow-Origin":"*"
+        }
     }
     ]
   }

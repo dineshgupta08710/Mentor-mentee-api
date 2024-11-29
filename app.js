@@ -7,10 +7,12 @@ const cors = require('cors');
 const corsConfig = {
   origin:"*",
   credentials: true,
-  methods:["GET","POST","PUT","DELETE"]
+  methods:["GET","POST","PUT","DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }
 app.use(cors(corsConfig));
 
+app.options("*", cors(corsConfig));
 
 // connecting to database
 // '#' char in url =>  %23
